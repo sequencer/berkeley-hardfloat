@@ -101,7 +101,7 @@ class AddRecFNFMASpec extends FMATester {
 
 class AddRecFNMiterSpec extends MiterTester {
     def test(f: Int): Int =
-        generate(
+        test(
             s"AddRecF${f}",
             () => new ValExec_AddRecFN(exp(f), sig(f))
         )

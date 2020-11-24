@@ -190,7 +190,7 @@ class RecFNToINFMASpec extends FMATester {
 
 class RecFNToUINMiterSpec extends MiterTester {
     def test(f: Int, i: Int): Int = {
-        generate(
+        test(
             s"RecF${f}ToUI${i}",
             () => new ValExec_RecFNToUIN(exp(f), sig(f), i)
         )
@@ -219,7 +219,7 @@ class RecFNToUINMiterSpec extends MiterTester {
 
 class RecFNToINMiterSpec extends MiterTester {
     def test(f: Int, i: Int): Int =
-        generate(
+        test(
             s"RecF${f}ToI${i}",
             () => new ValExec_RecFNToIN(exp(f), sig(f), i)
         )

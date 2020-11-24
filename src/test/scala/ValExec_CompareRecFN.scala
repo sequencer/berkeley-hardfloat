@@ -179,7 +179,7 @@ class CompareRecFNFMASpec extends FMATester {
 
 class CompareRecFNMiterSpec extends MiterTester {
     def test(f: Int, fn: String): Int =
-        generate(
+        test(
             s"CompareRecF${f}_$fn",
             fn match {
                 case "lt" => () => new ValExec_CompareRecFN_lt(exp(f), sig(f))

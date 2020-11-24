@@ -152,7 +152,7 @@ class INToRecFNFMASpec extends FMATester {
 
 class INToRecFNMiterSpec extends MiterTester {
     def test(i: Int, f: Int): Int = {
-        generate(
+        test(
             s"I${i}ToRecF${f}",
             () => new ValExec_INToRecFN(i, exp(f), sig(f))
         )

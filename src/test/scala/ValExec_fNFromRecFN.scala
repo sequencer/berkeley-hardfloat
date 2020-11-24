@@ -81,7 +81,7 @@ class FnFromRecFnFMASpec extends FMATester {
 
 class FnFromRecFnMiterSpec extends MiterTester {
     def test(f: Int): Int = {
-        generate(
+        test(
             s"f${f}FromRecF${f}",
             () => new ValExec_fNFromRecFN(exp(f), sig(f))
         )

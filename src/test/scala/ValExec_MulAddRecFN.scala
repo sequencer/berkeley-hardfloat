@@ -215,7 +215,7 @@ class MulAddRecFNFMASpec extends FMATester {
 
 class MulAddRecFNMiterSpec extends MiterTester {
     def test(f: Int, fn: String): Int = {
-        generate(
+        test(
             s"MulAddRecF${f}${fn match {
                 case "add" => "_add"
                 case "mul" => "_mul"

@@ -100,7 +100,7 @@ class MulRecFNFMASpec extends FMATester {
 
 class MulRecFNMiterSpec extends MiterTester {
     def test(f: Int): Int = {
-        generate(s"MulRecF${f}",
+        test(s"MulRecF${f}",
             () => new ValExec_MulRecFN(exp(f), sig(f))
         )
     }

@@ -223,7 +223,7 @@ class DivSqrtRecFn_smallFMASpec extends FMATester {
 
 class DivSqrtRecFn_smallMiterSpec extends MiterTester {
     def test(f: Int, fn: String): Int = {
-        generate(
+        test(
             s"DivSqrtRecF${f}_small_${fn}",
             fn match {
                 case "div" => () => new ValExec_DivSqrtRecFN_small_div(exp(f), sig(f))
