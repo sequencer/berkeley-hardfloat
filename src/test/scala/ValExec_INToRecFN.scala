@@ -122,7 +122,7 @@ class
         (io.actual.exceptionFlags === io.expected.exceptionFlags)
 }
 
-class INToRecFNSpec extends FMATester {
+class INToRecFNFMASpec extends FMATester {
     def test(i: Int, f: Int): Seq[String] = {
         test(
             s"I${i}ToRecF${f}",

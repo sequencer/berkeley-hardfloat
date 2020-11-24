@@ -56,7 +56,7 @@ class ValExec_fNFromRecFN(expWidth: Int, sigWidth: Int) extends Module
     io.pass := (io.out === io.a)
 }
 
-class FnFromRecFnSpec extends FMATester {
+class FnFromRecFnFMASpec extends FMATester {
     def test(f: Int): Seq[String] = {
         test(
             s"f${f}FromRecF${f}",

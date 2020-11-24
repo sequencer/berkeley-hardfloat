@@ -176,7 +176,7 @@ class ValExec_DivSqrtRecF64_sqrt extends Module {
         (io.actual.exceptionFlags === io.expected.exceptionFlags)
 }
 
-class DivSqrtRecF64Spec extends FMATester {
+class DivSqrtRecF64FMASpec extends FMATester {
     def test(fn: String): Seq[String] = {
         val generator = fn match {
             case "div" => () => new ValExec_DivSqrtRecF64_div

@@ -92,7 +92,7 @@ class ValExec_RecF32ToRecF64 extends ValExec_RecFNToRecFN(8, 24, 11, 53)
 class ValExec_RecF64ToRecF16 extends ValExec_RecFNToRecFN(11, 53, 5, 11)
 class ValExec_RecF64ToRecF32 extends ValExec_RecFNToRecFN(11, 53, 8, 24)
 
-class RecFNToRecFNSpec extends FMATester {
+class RecFNToRecFNFMASpec extends FMATester {
     def test(f0: Int, f1: Int): Seq[String] = {
         test(
             s"RecF${f0}ToRecF${f1}",

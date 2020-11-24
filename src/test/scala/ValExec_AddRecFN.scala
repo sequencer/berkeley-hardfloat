@@ -81,7 +81,7 @@ class ValExec_AddRecFN(expWidth: Int, sigWidth: Int) extends Module
         (io.actual.exceptionFlags === io.expected.exceptionFlags)
 }
 
-class AddRecFNSpec extends FMATester {
+class AddRecFNFMASpec extends FMATester {
     def test(f: Int): Seq[String] = {
         test(s"AddRecF${f}",
             () => new ValExec_AddRecFN(exp(f), sig(f)),

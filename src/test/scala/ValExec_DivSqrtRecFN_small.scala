@@ -186,7 +186,7 @@ class
         (io.actual.exceptionFlags === io.expected.exceptionFlags)
 }
 
-class DivSqrtRecFn_smallSpec extends FMATester {
+class DivSqrtRecFn_smallFMASpec extends FMATester {
     def test(f: Int, fn: String): Seq[String] = {
         val generator = fn match {
             case "div" => () => new ValExec_DivSqrtRecFN_small_div(exp(f), sig(f))

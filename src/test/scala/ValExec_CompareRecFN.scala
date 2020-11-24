@@ -133,7 +133,7 @@ class ValExec_CompareRecFN_eq(expWidth: Int, sigWidth: Int) extends Module
         (io.actual.exceptionFlags === io.expected.exceptionFlags)
 }
 
-class CompareRecFNSpec extends FMATester {
+class CompareRecFNFMASpec extends FMATester {
     def test(f: Int, fn: String): Seq[String] = {
         val generator = fn match {
             case "lt" => () => new ValExec_CompareRecFN_lt(exp(f), sig(f))

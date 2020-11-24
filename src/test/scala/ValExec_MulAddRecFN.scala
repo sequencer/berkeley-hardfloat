@@ -168,7 +168,7 @@ class ValExec_MulAddRecFN_mul(expWidth: Int, sigWidth: Int) extends Module
         (io.actual.exceptionFlags === io.expected.exceptionFlags)
 }
 
-class MulAddRecFNSpec extends FMATester {
+class MulAddRecFNFMASpec extends FMATester {
     def test(f: Int, fn: String): Seq[String] = {
         test(
             s"MulAddRecF${f}${fn match {

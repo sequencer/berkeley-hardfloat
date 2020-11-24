@@ -120,7 +120,8 @@ class
         (io.actual.out === io.expected.out) &&
         (io.actual.exceptionFlags === io.expected.exceptionFlags)
 }
-class RecFNToUINSpec extends FMATester {
+
+class RecFNToUINFMASpec extends FMATester {
     def test(f: Int, i: Int): Seq[String] = {
         val (softfloatArgs, dutArgs) = roundings.map { case (s, d) =>
             (s +: Seq("-exact", "-level2", s"f${f}_to_ui${i}"), Seq(d))
@@ -154,7 +155,7 @@ class RecFNToUINSpec extends FMATester {
     }
 }
 
-class RecFNToINSpec extends FMATester {
+class RecFNToINFMASpec extends FMATester {
     def test(f: Int, i: Int): Seq[String] = {
         val (softfloatArgs, dutArgs) = roundings.map { case (s, d) =>
             (s +: Seq("-exact", "-level2", s"f${f}_to_i${i}"), Seq(d))

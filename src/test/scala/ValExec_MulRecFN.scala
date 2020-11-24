@@ -80,7 +80,7 @@ class ValExec_MulRecFN(expWidth: Int, sigWidth: Int) extends Module
         (io.actual.exceptionFlags === io.expected.exceptionFlags)
 }
 
-class MulRecFNSpec extends FMATester {
+class MulRecFNFMASpec extends FMATester {
     def test(f: Int): Seq[String] = {
         test(s"MulRecF${f}",
             () => new ValExec_MulRecFN(exp(f), sig(f)),
