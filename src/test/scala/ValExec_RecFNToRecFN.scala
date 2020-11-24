@@ -120,3 +120,29 @@ class RecFNToRecFNFMASpec extends FMATester {
     }
 }
 
+class RecFNToRecFNMiterSpec extends MiterTester {
+    def test(f0: Int, f1: Int): Int = {
+        generate(
+            s"RecF${f0}ToRecF${f1}",
+            () => new ValExec_RecFNToRecFN(exp(f0), sig(f0), exp(f1), sig(f1))
+        )
+    }
+    "RecF16ToRecF32" should "pass" in {
+        check(test(16, 32))
+    }
+    "RecF16ToRecF64" should "pass" in {
+        check(test(16, 64))
+    }
+    "RecF32ToRecF16" should "pass" in {
+        check(test(32, 16))
+    }
+    "RecF32ToRecF64" should "pass" in {
+        check(test(32, 64))
+    }
+    "RecF64ToRecF16" should "pass" in {
+        check(test(64, 16))
+    }
+    "RecF64ToRecF32" should "pass" in {
+        check(test(64, 32))
+    }
+}

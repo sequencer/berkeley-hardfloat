@@ -188,3 +188,59 @@ class RecFNToINFMASpec extends FMATester {
         check(test(64, 64))
     }
 }
+
+class RecFNToUINMiterSpec extends MiterTester {
+    def test(f: Int, i: Int): Int = {
+        generate(
+            s"RecF${f}ToUI${i}",
+            () => new ValExec_RecFNToUIN(exp(f), sig(f), i)
+        )
+    }
+
+    "RecF16ToUI32" should "pass" in {
+        check(test(16, 32))
+    }
+    "RecF16ToUI64" should "pass" in {
+        check(test(16, 64))
+    }
+    "RecF32ToUI32" should "pass" in {
+        check(test(32, 32))
+    }
+    "RecF32ToUI64" should "pass" in {
+        check(test(32, 64))
+    }
+    "RecF64ToUI32" should "pass" in {
+        check(test(64, 32))
+    }
+    "RecF64ToUI64" should "pass" in {
+        check(test(64, 64))
+    }
+}
+
+
+class RecFNToINMiterSpec extends MiterTester {
+    def test(f: Int, i: Int): Int =
+        generate(
+            s"RecF${f}ToI${i}",
+            () => new ValExec_RecFNToIN(exp(f), sig(f), i)
+        )
+
+    "RecF16ToI32" should "pass" in {
+        check(test(16, 32))
+    }
+    "RecF16ToI64" should "pass" in {
+        check(test(16, 64))
+    }
+    "RecF32ToI32" should "pass" in {
+        check(test(32, 32))
+    }
+    "RecF32ToI64" should "pass" in {
+        check(test(32, 64))
+    }
+    "RecF64ToI32" should "pass" in {
+        check(test(64, 32))
+    }
+    "RecF64ToI64" should "pass" in {
+        check(test(64, 64))
+    }
+}

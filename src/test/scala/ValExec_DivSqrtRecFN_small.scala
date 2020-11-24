@@ -217,3 +217,34 @@ class DivSqrtRecFn_smallFMASpec extends FMATester {
         check(test(64, "sqrt"))
     }
 }
+
+
+class DivSqrtRecFn_smallMiterSpec extends MiterTester {
+    def test(f: Int, fn: String): Int = {
+        generate(
+            s"DivSqrtRecF${f}_small_${fn}",
+            fn match {
+                case "div" => () => new ValExec_DivSqrtRecFN_small_div(exp(f), sig(f))
+                case "sqrt" => () => new ValExec_DivSqrtRecFN_small_sqrt(exp(f), sig(f))
+            }
+        )
+    }
+    "DivSqrtRecF16_small_div" should "pass" in {
+        check(test(16, "div"))
+    }
+    "DivSqrtRecF32_small_div" should "pass" in {
+        check(test(32, "div"))
+    }
+    "DivSqrtRecF64_small_div" should "pass" in {
+        check(test(64, "div"))
+    }
+    "DivSqrtRecF16_small_sqrt" should "pass" in {
+        check(test(16, "sqrt"))
+    }
+    "DivSqrtRecF32_small_sqrt" should "pass" in {
+        check(test(32, "sqrt"))
+    }
+    "DivSqrtRecF64_small_sqrt" should "pass" in {
+        check(test(64, "sqrt"))
+    }
+}

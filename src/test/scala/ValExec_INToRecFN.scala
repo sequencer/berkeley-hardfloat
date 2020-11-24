@@ -149,3 +149,30 @@ class INToRecFNFMASpec extends FMATester {
         check(test(64, 64))
     }
 }
+
+class INToRecFNMiterSpec extends MiterTester {
+    def test(i: Int, f: Int): Int = {
+        generate(
+            s"I${i}ToRecF${f}",
+            () => new ValExec_INToRecFN(i, exp(f), sig(f))
+        )
+    }
+    "I32ToRecF16" should "pass" in {
+        check(test(32, 16))
+    }
+    "I32ToRecF32" should "pass" in {
+        check(test(32, 32))
+    }
+    "I32ToRecF64" should "pass" in {
+        check(test(32, 64))
+    }
+    "I64ToRecF16" should "pass" in {
+        check(test(64, 16))
+    }
+    "I64ToRecF32" should "pass" in {
+        check(test(64, 32))
+    }
+    "I64ToRecF64" should "pass" in {
+        check(test(64, 64))
+    }
+}

@@ -98,3 +98,20 @@ class AddRecFNFMASpec extends FMATester {
         check(test(64))
     }
 }
+
+class AddRecFNMiterSpec extends MiterTester {
+    def test(f: Int): Int =
+        generate(
+            s"AddRecF${f}",
+            () => new ValExec_AddRecFN(exp(f), sig(f))
+        )
+    "AddRecF16" should "pass" in {
+        check(test(16))
+    }
+    "AddRecF32" should "pass" in {
+        check(test(32))
+    }
+    "AddRecF64" should "pass" in {
+        check(test(64))
+    }
+}

@@ -78,3 +78,24 @@ class FnFromRecFnFMASpec extends FMATester {
         check(test(64))
     }
 }
+
+class FnFromRecFnMiterSpec extends MiterTester {
+    def test(f: Int): Int = {
+        generate(
+            s"f${f}FromRecF${f}",
+            () => new ValExec_fNFromRecFN(exp(f), sig(f))
+        )
+    }
+
+    "f16FromRecF16" should "pass" in {
+        check(test(16))
+    }
+
+    "f32FromRecF32" should "pass" in {
+        check(test(32))
+    }
+
+    "f64FromRecF64" should "pass" in {
+        check(test(64))
+    }
+}

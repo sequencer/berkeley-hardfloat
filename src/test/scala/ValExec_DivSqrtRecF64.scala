@@ -195,3 +195,21 @@ class DivSqrtRecF64FMASpec extends FMATester {
         check(test("sqrt"))
     }
 }
+
+class DivSqrtRecF64MiterSpec extends MiterTester {
+    def test(fn: String): Int = {
+        generate(
+            s"DivSqrtRecF64_${fn}",
+            fn match {
+                case "div" => () => new ValExec_DivSqrtRecF64_div
+                case "sqrt" => () => new ValExec_DivSqrtRecF64_sqrt
+            }
+        )
+    }
+    "DivSqrtRecF64_div" should "pass" in {
+        check(test("div"))
+    }
+    "DivSqrtRecF64_sqrt" should "pass" in {
+        check(test("sqrt"))
+    }
+}

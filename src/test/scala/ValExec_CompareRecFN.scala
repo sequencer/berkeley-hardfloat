@@ -176,3 +176,43 @@ class CompareRecFNFMASpec extends FMATester {
         check(test(64, "eq"))
   }
 }
+
+class CompareRecFNMiterSpec extends MiterTester {
+    def test(f: Int, fn: String): Int =
+        generate(
+            s"CompareRecF${f}_$fn",
+            fn match {
+                case "lt" => () => new ValExec_CompareRecFN_lt(exp(f), sig(f))
+                case "le" => () => new ValExec_CompareRecFN_le(exp(f), sig(f))
+                case "eq" => () => new ValExec_CompareRecFN_eq(exp(f), sig(f))
+            }
+        )
+
+    "CompareRecF16_lt" should "pass" in {
+        check(test(16, "lt"))
+    }
+    "CompareRecF32_lt" should "pass" in {
+        check(test(32, "lt"))
+    }
+    "CompareRecF64_lt" should "pass" in {
+        check(test(64, "lt"))
+    }
+    "CompareRecF16_le" should "pass" in {
+        check(test(16, "le"))
+    }
+    "CompareRecF32_le" should "pass" in {
+        check(test(32, "le"))
+    }
+    "CompareRecF64_le" should "pass" in {
+        check(test(64, "le"))
+    }
+    "CompareRecF16_eq" should "pass" in {
+        check(test(16, "eq"))
+    }
+    "CompareRecF32_eq" should "pass" in {
+        check(test(32, "eq"))
+    }
+    "CompareRecF64_eq" should "pass" in {
+        check(test(64, "eq"))
+    }
+}

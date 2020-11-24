@@ -212,3 +212,47 @@ class MulAddRecFNFMASpec extends FMATester {
         check(test(64, "mul"))
     }
 }
+
+class MulAddRecFNMiterSpec extends MiterTester {
+    def test(f: Int, fn: String): Int = {
+        generate(
+            s"MulAddRecF${f}${fn match {
+                case "add" => "_add"
+                case "mul" => "_mul"
+                case "mulAdd" => ""
+            }}",
+            () => fn match {
+                case "add" => new ValExec_MulAddRecFN_add(exp(f), sig(f))
+                case "mul" => new ValExec_MulAddRecFN_mul(exp(f), sig(f))
+                case "mulAdd" => new ValExec_MulAddRecFN(exp(f), sig(f))
+            }
+        )
+    }
+    "MulAddRecF16" should "pass" in {
+        check(test(16, "mulAdd"))
+    }
+    "MulAddRecF32" should "pass" in {
+        check(test(32, "mulAdd"))
+    }
+    "MulAddRecF64" should "pass" in {
+        check(test(64, "mulAdd"))
+    }
+    "MulAddRecF16_add" should "pass" in {
+        check(test(16, "add"))
+    }
+    "MulAddRecF32_add" should "pass" in {
+        check(test(32, "add"))
+    }
+    "MulAddRecF64_add" should "pass" in {
+        check(test(64, "add"))
+    }
+    "MulAddRecF16_mul" should "pass" in {
+        check(test(16, "mul"))
+    }
+    "MulAddRecF32_mul" should "pass" in {
+        check(test(32, "mul"))
+    }
+    "MulAddRecF64_mul" should "pass" in {
+        check(test(64, "mul"))
+    }
+}

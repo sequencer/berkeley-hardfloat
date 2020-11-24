@@ -97,3 +97,20 @@ class MulRecFNFMASpec extends FMATester {
         check(test(64))
     }
 }
+
+class MulRecFNMiterSpec extends MiterTester {
+    def test(f: Int): Int = {
+        generate(s"MulRecF${f}",
+            () => new ValExec_MulRecFN(exp(f), sig(f))
+        )
+    }
+    "MulRecF16" should "pass" in {
+        check(test(16))
+    }
+    "MulRecF32" should "pass" in {
+        check(test(32))
+    }
+    "MulRecF64" should "pass" in {
+        check(test(64))
+    }
+}
